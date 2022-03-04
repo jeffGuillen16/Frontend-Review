@@ -9,13 +9,18 @@
 <body>
     <h1>Array</h1>
     <script>
+    
     // Posee indice y cada indice guarda un dato
     var productos=["manzana","pera","uva","sandia","naranja"];
-    console.log('indice  0',productos [0]);
-    console.log('indice 1',productos [1]);
-    console.log('indice 2',productos [2]);
-    console.log('indice 3',productos [3]);
-    console.log('indice 4',productos [4]);
+    
+// Subindices Mostrados    
+    // console.log('indice  0',productos [0]);
+    // console.log('indice 1',productos [1]);
+    // console.log('indice 2',productos [2]);
+    // console.log('indice 3',productos [3]);
+    // console.log('indice 4',productos [4]);
+    
+
     // cadena de texto String
     var saludo=new String('hola como estas');
     console.log(saludo);
@@ -27,7 +32,30 @@
     console.log(saludo[5]);
     console.log(saludo[6]);
     console.log(saludo[7]);
+    console.log("---Elementos de un array--");
     
+    // Recorrer Elementos de un array
+    for(var i=0;i<productos.length;i++){
+        console.log(productos[i]);
+    }
+
+    //Inserta Elementos de un array
+    console.log("---Agrego elemento al array---")
+    productos.push("melon");
+    productos.push("fresa");
+    console.log(productos);
+    //Quito Elementos de un array
+    productos.pop();//Quita el ultimo elemento
+
+    console.log("---Quito elemento al array---")
+    //Quita el primer elemento de un array
+    productos.shift();//Quita el primer elemento del array
+    console.log(productos)
+
+    console.log("---Agrego al inicio del array---")
+    //Agrega elementos al inicio de un array
+    productos.unshift("limon");
+    console.log(productos);
     </script>
 </body>
 </html>
