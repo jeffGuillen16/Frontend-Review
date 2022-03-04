@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos Literales</title>
+</head>
+<body>
+    <h1>Objetos Literales</h1>
+    <script>
+
+//Que es un Literal?->la definicion alude a algo textual
+let colorDelSol="Amarillo";
+//Podemos decir la variable colorDelSol tiene asignada un String Literal
+//ya que se asigna el valor textualmente
+
+// -----Caracteristicas de un Objeto-----
+
+let perro ={
+    nombre:"Scott",
+    color:"Cafe",
+    edad:5,
+    macho:true
+};
+
+console.info(perro.nombre);//Scott
+console.info(perro.edad);//5
+console.info(perro.macho);//true
+
+//Metodo de un objeto
+
+let gato={
+    nombre:"Griselda",
+    color:"gris",
+    edad:8,
+    hembra:true,
+    maullar:function (){
+        return (`${this.nombre} puede mauallar`)
+    }
+};
+
+console.info(gato.nombre);//Griselda
+console.info(gato.edad);//8
+console.info(gato.maullar())
+
+
+
+
+    </script>
+</body>
+</html>
