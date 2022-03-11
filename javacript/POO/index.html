@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradigma Orientación de Objetos</title>
+</head>
+<body>
+    <h1>Paradigma Orientación de Objetos</h1>
+    <h2>Programación de Prototipos</h2>
+    <script>
+        /*
+        Clase-Modelo a seguir.
+        Objetos-Es una instancia de una clase
+        Atributos 
+        Metodos
+        */
+
+        //objetos
+        const perro = {
+            nombre:"bobi",  
+            dueño:"jeff",
+            //Metodos
+            ladrar:function(){
+                console.log("uau uau uau");
+            }
+        };
+
+        //Función constructora
+        function bebe(nombre,edad){
+            this.nombre=nombre;
+            this.edad=edad;
+            //Metodos
+            this.habilidad=function(){
+                console.log("llorarrrrrr")
+            }
+        }
+        let nombre="jeff";
+        let edad=23;
+        bebe(nombre,edad);
+        console.info(perro);
+        console.info(bebe);
+        console.info(perro.ladrar());
+        console.info(bebe.habilidad());
+    </script>
+</body>
+</html>
