@@ -16,6 +16,29 @@
         // const suma=(a,b) => {return a+b;};
         const suma = (a, b) => a + b;
         console.log(suma(a, b));
+        /*
+        This por referencia apunta al objeto window
+        */
+        
+        //Ejemplo con una funcion
+        function perro(){
+            console.log(this);
+        }
+        perro();//Apunta al objeto window
+
+        //Ejemplo de un objeto literal con una funcion normal
+        const gato ={
+            nombre:"kenai",
+            maullar:function(){
+                console.log(this);
+            }
+        }
+        console.log(gato); //Te aparece lo que contiene el objeto 
+        const loro={
+            nombre:"fede",
+            vuela:()=>{console.log(this)}
+        };
+        loro.vuela();
     </script>
 </body>
 
