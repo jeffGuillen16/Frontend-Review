@@ -16,8 +16,18 @@
         //Concatenación
         let saludo = "Hola mi nombre es " + nombre 
         console.log(saludo)
-        //Interpolcion de variables
-
+        //concatenacion con comillas dobles->no te permite usar saltos de linea 
+        let ul="<ul><li>flores</li><li>plantas</li><li>mandarinas</li></ul>";
+        console.log(ul);
+        //concatenacion con comillas invertidas ->Las templates string
+        // Te permite usar saltos de lineas
+            //Interpolcion de variables
+            let ul2 = `<ul>
+                            <li>flores</li>
+                            <li>mandarinas</li>
+                            <li>plantas</li>
+                        </ul>`
+        console.log(ul2);
         //Template String->es mas dinamico que concatenarlo
         let saludo2 = `Hola mi nombre es ${nombre} ${apellido}`;
         console.log(saludo2);
