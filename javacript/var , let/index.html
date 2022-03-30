@@ -32,7 +32,23 @@
 // let no varia el dato se mantiene intacto
     // let h=3;
     // let h=4;
-    // console.log(h)
+    // console.log(h);
+
+//------------------Diferencia entre var let const-------------------
+/*
+var:permite redeclarar la variable y modificar
+let : no te permite redeclarar la variable pero si modificarla
+const: no te permite redeclarar la variable ni modificarla
+*/
+    console.log("-----------Diferencia entre var let const-----------");
+    var fruta = "manzana";
+    console.log(`antes del scoope ${fruta}`);
+    if (fruta === "manzana") {
+        var fruta = "naranja";
+        console.log(`dentro del scoope ${fruta}`);
+    }
+    console.log(`despues del scoope ${fruta}`);
+
 </script>
 </body>
 </html>
