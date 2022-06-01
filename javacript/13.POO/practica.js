@@ -1,7 +1,8 @@
 //-----------Prototipo de un objeto------------------
 /*
 Javascript esta construido con prototipos pero en vez de esto usamos clases por que a partir del 2015 
-el standar ECM6 lo pide como regla , ademas funciona con node js
+el standar ECM6 lo pide como regla , ademas funciona con node js pero la orientacion a objetos en javascript
+es basado en prototipos no en clases , javascript lo compila las clases y lo transforma en protipos
 Tiene la capacidad de heredar los atributos y metodos (Propiedades)de un objeto.
  */
 
