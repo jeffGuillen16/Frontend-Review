@@ -1,40 +1,19 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    font-family: sans-serif;
-}
 
 body{
-    background-color: skyblue;
-}
-.zombie{
-    width:100px;
-    height:100px;
-}
-.planta{
-    width:100px;
-    height:100px;
-    margin-top: 0px;
-}
-.girasol{
-    width:100px;
-    height:100px;
+    background-color: red;
 }
 
-.jardin{
-    border: 10px solid red;  
+
+/*margin:0 auto centra horizontal*/
+
+    .cuadrado {
+        width: 100px; 
+        height: 100px; 
+        background: #428bca;
 }
 
-h1{
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-.container-character{
+.contenedor{
     display: flex;
-    position: absolute;
-    left: 0px;
-    right:0px;
-    top: 300px;
-    flex-direction: row-reverse;
-    margin-right: 1000px;
+    justify-content: center;
+    align-items: center;
 }

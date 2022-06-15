@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funcion Flecha</title>
 </head>
+
 <body>
     <h1>
         Funcion Flecha
@@ -19,29 +21,97 @@
         /*
         This por referencia apunta al objeto window
         */
-        
+
         //Ejemplo con una funcion
-        function perro(){
+        function perro() {
             console.log(this);
         }
         perro();//Apunta al objeto window
-        
+
 
         //Ejemplo de un objeto literal con una funcion normal
-        const gato ={
-            nombre:"kenai",
-            maullar:function(){
+        const gato = {
+            nombre: "kenai",
+            maullar: function () {
                 console.log(this);
             }
         }
-        console.log(gato); //Te aparece lo que contiene el objeto 
-        const loro={
-            nombre:"fede",
-            vuela:()=>{console.log(this)}
+        console.log(gato); //Te aparece lo que contiene el objeto  , por que el arrow function apunte al objeto superio que posee
+        const loro = {        //Podemos aprovecho para poder usar las funciones de window como setTime()
+            nombre: "fede",
+            vuela: () => { console.log(this) }
         };
         loro.vuela();
-        
-    </script>
-</body>
 
-</html>
+
+        /*ejemplo Arrow function vs object literal*/
+
+        //Con una funcion normal
+        const persona = {
+            name: 'Agustin',
+            decirNombre: function () {
+                console.log(this.name)
+            }
+        };
+        console.log(persona.decirNombre()); // OUTPUT : 'Agustin'        
+
+
+        //con arrow function
+
+            const persona2 = {
+                name: 'Agustin',
+                decirNombre: () => {
+                    console.log(this.name)
+                }
+            };
+            console.log(persona2.decirNombre()); //OUTPUT: 'UNDEFINED'
+        /*Lo que ocurre es que las arrow functions, 
+        a diferencia de las funciones regulares, no se les asigna un this propio sino que heredan
+        el this del contexto superior, que estando dentro del contexto del objeto persona,
+        this hace referencia al objeto window. Por lo tanto, la propiedad 'nombre' no esta 
+        definida en el objeto window, y recibimos el mensaje undefined.*/
+
+            //Funcion de window setTimeout(){} -> setTimerout() apunta al objeto window
+            const persona3 = {
+                nombre: 'Jeff',
+
+                decirNombre: function () {
+                    setTimeout(function () {
+                        console.log(this.nombre);
+                    }, 3000);
+                }
+            }
+            persona3.decirNombre();//OUTPUT : UNDEFINED
+
+            //setTimeout Funcion window como arreglar esto con that
+
+            const persona4 = {
+                nombre: 'Jeff',
+
+                decirNombre: function () {
+                    let that = this;
+                    setTimeout(function () {
+                        console.log(that.nombre);
+                    }, 3000);
+                }
+            }
+            persona4.decirNombre();//OUTPUT UNDEFINED:
+
+            
+            //setTimeout funcion window como arreglar con arrow function
+
+            
+            const persona5 = {
+                nombre: 'Jeff',
+
+                decirNombre: function () {
+                    setTimeout(()=>{
+                        console.log(this.nombre);
+                    }, 3000);
+                }
+            }
+            persona5.decirNombre();//OUTPUT Jeff:
+</script>
+    </body>
+    
+    </html>
