@@ -1,6 +1,7 @@
 
 body{
     background-color: red;
+    
 }
 
 
@@ -13,7 +14,9 @@ body{
 }
 
 .contenedor{
+    height: 100vh;
+    width: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    Align-items: center;
 }

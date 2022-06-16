@@ -1,6 +1,5 @@
 //-----------------------------------Prototipo de una función --------------------------------
-// -> "Es una interfaz"- para proporcionar mecanismos de herencia, 
-// los objetos pueden tener un objeto prototipo,  el cual actúa como un objeto plantilla que hereda métodos y propiedades.
+// -> Los prototipos son un mecanismo mediante el cual los objetos en JavaScript heredan características entre sí. 
 
             /*
             Clase:Modelo a seguir.
@@ -39,7 +38,7 @@
             this.nombre=nombre;
             this.edad=edad;
             }
-        Animal.prototype.saludar=function(){
+        Animal.prototype.saludar=function(){ //-> lleva las funciones al objeto prototype para ahorra espacio
                 console.log("blablabla");
             }
         Animal.prototype.sonar=function(){
@@ -48,6 +47,8 @@
         
         //-----------------Herencia de Prototipica---------------------
         
+        /*La palabra clave super es usada para acceder y llamar funciones del padre de un objeto.*/
+
         //Herencia prototipica
         function Perro(nombre,edad,tamanio){
             this.super=Animal;//->Herencia
@@ -79,6 +80,6 @@
 
         camilo.sonar();
         camilo.ladrar();
-
+        
         lola.sonar();
         lola.saludar();
