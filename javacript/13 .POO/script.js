@@ -80,6 +80,5 @@
 
         camilo.sonar();
         camilo.ladrar();
-        
         lola.sonar();
         lola.saludar();
