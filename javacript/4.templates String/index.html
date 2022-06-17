@@ -28,10 +28,20 @@
                             <li>plantas</li>
                         </ul>`
         console.log(ul2);
-        //Template String->es mas dinamico que concatenarlo
+        //Template String->es mas dinamico que concatenarlo -> backtips
+        //Interpolación de variables
         let saludo2 = `Hola mi nombre es ${nombre} ${apellido}`;
         console.log(saludo2);
-    
+        
+        const Alumno ={
+            name:"jeferson",
+            edad:4,
+            decirEdad : function(){
+                return "Mi edad es " + Alumno.edad + ".";
+            }
+        }
+        
+        console.log(Alumno.decirEdad());
     </script>
 </body>
 
