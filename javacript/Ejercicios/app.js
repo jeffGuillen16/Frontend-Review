@@ -185,12 +185,3 @@ const getNumber=(min=Number,max=Number)=>{
 
 getNumber(2,5);
 getNumber(501,600);
-
-
-let array=["mandarina","fruta","limon"];
-console.log(array.indexOf("mandarina",0))
-
-
-
-let letra="hola como estas hey hey ";
-console.log(letra.indexOf("como",));
