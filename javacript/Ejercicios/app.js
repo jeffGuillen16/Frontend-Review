@@ -150,10 +150,6 @@ Join -> unira los caracteres La cadena esta vacia
 pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
  */
 
-/* String.prototype.repeat()
-El método repeat() construye y devuelve una nueva cadena que contiene el número 
-especificado de copias de la cadena en la cual fue llamada, concatenados.
- */
 const repeatWordNumber=(cadena="",textoRepeat="")=>{
   if(!cadena)  return console.warn("La cadena de texto esta vacia");
   if(!textoRepeat) return console.warn("El texto que se repite esta vacio");
@@ -185,3 +181,18 @@ const getNumber=(min=Number,max=Number)=>{
 
 getNumber(2,5);
 getNumber(501,600);
+/* Indexof(cadena,coincidencia) -> cuantas veces se repite una palabra o texto*/
+const retornar=(cadena="",repite="")=>{
+  let contador=0;
+  let i=0;
+  while(i!==-1){
+    i=cadena.indexOf(repite,i)
+      if(i!==-1){
+        i++;
+        contador++;
+      }
+  }
+  console.info(contador++);
+}
+
+retornar("hola mundo hey como estas hey como estas , hey","hey");
