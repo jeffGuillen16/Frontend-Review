@@ -46,7 +46,7 @@ function Animal(nombre,edad){
     this.edad=edad;
     }
 
-    //Agregas los metodo fuera de la funcion constructura para que esten dentro de 
+    //Agregas los metodos fuera de la funcion constructura para que esten dentro de 
     // del prototipo del objeto y no dentro de la instancia de objeto
 
   //Metodos
@@ -56,6 +56,7 @@ Animal.prototype.sonar=function(){
 
 //Instanciamos el objeto
 const ballena=new Animal("willi",20);
+console.log(ballena);
 ballena.sonar();
 
 /*----------------- Herencia Protipica-----------*/
