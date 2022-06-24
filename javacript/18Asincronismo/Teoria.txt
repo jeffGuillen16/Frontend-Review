@@ -1,0 +1,29 @@
+-----------------Asincronia en Javascript-------------------
+Antes de explica como funciona el modelo de javascript es importante 
+algunos conceptos
+    Procesamiento Single thread y Multi thread
+    Operaciones de CPU y Operaciones de I/O
+    Operaciones Concurrente y paralelas 
+    Operaciones Bloqueantes y No bloqueantes 
+    Operaciones Sincronas y Asincronas
+    --------------------------------------------
+    Javascript es un lenguaje por defecto Sincrona , mediantes funciones podemos volverlos Asincrono
+    Sincronia: Una tarea a la vez
+    Asincronia: Una tarea que espera que se realice dicha accion , con esto queremos decir que las tareas 
+    que realizamos no se quedan bloqueadas esperando a ser finalizadas y por consiguiente  , evitando 
+    proseguir con el resto de tareas(mejor llamado lenguaje no bloqueantes).
+    
+    Tareas Sincronas :   Tarea1 -> Tarea2 -> Tarea3
+    
+    Tareas Asincronas Pendientes : 1) Tarea1 -> (aun no se a hecho click )Tarea2 -> Tarea3
+                                   2) Tarea1 -> Accion-> Tarea3
+                                   3) Tarea2 (Ya se puede realizar)
+
+    Concurrencia  : Diferentes tareas que se llevan a cabo simulataneamente
+    Utiliza un modelo de concurrencia basado en concurrencia"loop de eventos"
+    
+    El eventLoop: El bucle de eventos es un patron de diseño que espera 
+    y distribuye eventos o mensajes en un programa
+
+    Patron de diseño : Basicamente es una forma reutilizable de resolver un problema
+    común en el desarrollo de software.
