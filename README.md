@@ -7,10 +7,10 @@ Vamos a ver temas especificos de teoria como:
 - Prototypes functions
 - Arrays
 - Js Asincr y Sincr
-- POO (Abastracción  , Herencia , polimorfismo)
+- POO (Abastraction  , Inhereirs, Polymorphism)
 - Dom (Document object Model)
 - Json
-- Eventos
+- Events
 # HTML Review
 - Structure Semantic
 - Elemnt block , line
