@@ -1,2 +1,4 @@
+#Mi Repaso de Frontend Developer , Mis buenas practicas
+
 # JavaScriptRepaso
-Vamos a ver temas especificos de teoria de html como css y como tambien practica
+Vamos a ver temas especificos de teoria , ejercicios de Javascript 
