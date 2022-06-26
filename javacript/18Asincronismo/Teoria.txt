@@ -1,18 +1,57 @@
+----------------------------(Javascript por defecto es un lenguaje Sincronico)-------------------------------
+    Javascript es un lenguaje single thread (osea de un solo hilo). No se pueden
+    realizar operaciones largas sin que se bloqueen el hilo principal , eso es uno de los principales
+    preocupaciones de un lenguaje que trabaja en un solo hilo. 
+    Ejemplo: Imaginate que solicitas datos a una API , dependiendo de la situacion de la red del servidor
+    esto puede tardar mucho tiempo o poco tiempo en procesar esta solicitud y mientras el hilo principal de tu
+    codigo queda bloqueado esto haria que la pagina web no respondiera y ahi es donde entra la asincronia que 
+    permite justamente realizar largas solicitudes de red sin bloquear el hilo principal . Javascript fue diseñado
+    para ser ejecutado en navegadores , trabajar con peticiones en la red y procesar las interacciones con el usario 
+    y esto al mismo tiempo para poder tener una interfaz mas fluida . "Javascript trabaja bajo un modelo asincrono y no 
+    bloqueante y tiene un loop de eventos de un solo hilo(single thread)para operaciones de entradas y salidas gracias a esto Javascript
+    es altamente concurrente a pesar de que es un lenguaje de un solo hilo ".
+
 -----------------Asincronia en Javascript-------------------
-Antes de explica como funciona el modelo de javascript es importante 
-algunos conceptos
+    Antes de explica como funciona el modelo de javascript es importante 
+    algunos conceptos:
     Procesamiento Single thread y Multi thread
     Operaciones de CPU y Operaciones de I/O
     Operaciones Concurrente y paralelas 
     Operaciones Bloqueantes y No bloqueantes 
     Operaciones Sincronas y Asincronas
-    --------------------------------------------
-    Javascript es un lenguaje por defecto Sincrona , mediantes funciones podemos volverlos Asincrono
-    Sincronia: Una tarea a la vez
-    Asincronia: Una tarea que espera que se realice dicha accion , con esto queremos decir que las tareas 
-    que realizamos no se quedan bloqueadas esperando a ser finalizadas y por consiguiente  , evitando 
-    proseguir con el resto de tareas(mejor llamado lenguaje no bloqueantes).
-    
+-----------------------------------------------
+Procesamiento Single thread y Multi thread
+       ->Single thread: un sólo subproceso o hilo (single thread), 
+         lo que significa que sólo puede ejecutar una cosa a la vez (Javascript por 
+         defecto es un lenguaje de  un solo subproceso)
+        
+        ->Multi thread: Trabaja con multiples hilos  
+
+Operaciones de CPU y Operaciones de I/O
+    Operaciones CPU: Aquellas que pasan el mayor tiempo consumiendo Procesos del CPU, por ejemplo, la escritura de ficheros.
+    de una petición o recurso, como la solicitud a una API o BD.
+    Operaciones de Entrada y Salida: Aquellas que pasan la mayor parte del tiempo esperando la respuesta
+
+    Operaciones Concurrente y paralelas 
+    Concurrencia: cuando dos o más tareas progresan simultáneamente.
+    Paralelismo: cuando dos o más tareas se ejecutan, al mismo tiempo.
+
+Operaciones Bloqueantes y No bloqueantes 
+
+    Se refiere a como la fase de espera de las operaciones afectan a nuestra aplicación:
+    Bloqueante: Son operaciones que no devuelven el control a nuestra aplicación hasta que se ha completado. Por tanto el thread queda bloqueado en estado de espera.
+    No Bloqueante: Son operaciones que devuelven inmediatamente el control a nuestra aplicación, independientemente del resultado de esta. En caso de que se haya completado, devolverá los datos solicitados. 
+    En caso contrario (si la operación no ha podido ser satisfecha) podría devolver un código de error.
+
+Operaciones Sincronas y Asincronas
+Síncrono: La respuesta sucede en el presente, una operación síncrona esperará el resultado.
+Asíncrono: La respuesta sucede a futuro, una operación asíncrona no esperará el resultado.
+
+Podemos Decir que javascript es:
+Código síncrono y bloqueante o
+Código asíncrono y no bloquenate
+------------------------------------------------
+
     Tareas Sincronas :   Tarea1 -> Tarea2 -> Tarea3
     
     Tareas Asincronas Pendientes : 1) Tarea1 -> (aun no se a hecho click )Tarea2 -> Tarea3
