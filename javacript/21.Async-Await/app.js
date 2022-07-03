@@ -6,7 +6,7 @@ function cuadradoPromise(value){
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{
             resolve({
-                value:value,
+                value,
                 result:value*value
             });
         },0|Math.random()*1000);
@@ -15,7 +15,7 @@ function cuadradoPromise(value){
     async function funcionAsincronaDeclarada(){
         try {
             console.log("Inicio Aync Function");
-            let obj=await cuadradoPromise(0);
+            let obj=await cuadradoPromise("3");
             console.log(`Async Function:${obj.value},${obj.result}`);
             
             
@@ -31,7 +31,7 @@ function cuadradoPromise(value){
             console.log(`Async Function:${obj.value},${obj.result}`);
             console.log("Fin Async Function");
         }
-        catch(error){
+        catch(err){
             console.error(err);
         }
     }
