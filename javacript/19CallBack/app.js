@@ -1,14 +1,42 @@
- //callback
 
-function modify(array, callback){
-  //hacemos algo...
-  array.push('midu')
-  //despues de hacer algo..
-setTimeout(function(){ callback(array)},3000)
+//aplicando sincronismo bloqueante
+/* function primero(){
+  console.log("PRIMERO");  
 }
 
-const names=['gartiel','vedaskies','tomimelo']
+function segundo(){
+  console.log("SEGUNDO");
+}
 
-modify(names,function(array){
-  console.log(`he modificado el array y ahora es de ${ array.length } elementos!`)
-})
+primero();
+segundo(); */
+
+
+
+//callback-aplicando asincronismo no bloqueante
+function primero(segundo){
+  setTimeout(function(){
+    console.log("PRIMERO");
+    segundo();
+  },3000);
+}
+
+function segundo(){
+  console.log("SEGUNDO");
+}
+
+primero(segundo);
+
+console.log("")
+
+function esperarPedido(pedido){
+  console.log("Esperando la entrega del pedido " + pedido)
+}
+
+function hacerPedido(esperarPedidoCall){
+  let comida="hamburguesa";
+  console.log("Pedido realizado: " + comida);
+  esperarPedidoCall(comida);
+}
+
+hacerPedido(esperarPedido);

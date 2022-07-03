@@ -1,3 +1,9 @@
------------------------Call back----------------
-Una función de callback es una función que se pasa a otra función como un argumento, 
-que luego se invoca dentro de la función externa para completar algún tipo de rutina o acción.
+-----------------------Call back-------------------------
+Un callback es una función pasada como argumento a otra función.
+Necesitamos callbacks por muchos metodos en javascript son asincronos . 
+
+Una función asincrona se ejecuta y el programa sigue su ejecución sin
+importar que esta última no haya terminado.
+Lo que podria pasar si pedido() y entrega() son dos funciones asincronas
+y no estan bien manejadas , es que entrega se hace primero que pedido
+y no recibimos lo que queremos

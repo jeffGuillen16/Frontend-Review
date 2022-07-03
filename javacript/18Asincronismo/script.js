@@ -16,7 +16,7 @@
     uno();
     console.log("Fin");
 })();
-
+console.log("");
 /* Código Asíncrono No bloqueante */
 
 (()=>{
@@ -28,7 +28,6 @@
             console.log("Dos");
         },1000);
     }
-console.log("##########################")
     function uno(){
         setTimeout(function(){
             console.log("Uno");
