@@ -1,0 +1,39 @@
+-----------Promise---------------------
+Como su propio nombre indica , una promesa es algo que en , 
+principio pensamo que se cumplirá , pero en el futuro puede 
+ocurrir varias cosas: 
+
+viene a reemplazar al call back (Tenes mas funcionalidades)
+
+Una promesa en javascript es el objeto que representa un valor que estara 
+disponible ahora , en el futuro o quizas nunca
+
+Por esta razon dejamos preparado dentro de la promesa el codiog
+que se ejecutará en caso de que el resultado llegue , o de que de error.
+
+Parámetro resolve y reject
+
+resolve : Es una función que recibe como parametro el objeto que queremos 
+que devuelva cuando el codigo tuvo el resultado que esperamos 
+
+reject: Es una función que toma como parámetro que devolveerá 
+si obtenemos un error
+
+Promise.all
+
+El metodo .all ejecuta un Array de promesas , devolviendo un array con resultados
+
+const allpromise = Promise.all([Promise1, Promise2,....])
+
+Se resuelve cuando todas las promesas se resuelven , en este caso devuelve resueltos.
+
+allpromise.then(sucess=> console.log('sucess:',sucess)).catch(error=>
+console.log('error',error));
+//Result // sucess:[2,4,5,2,8,10]
+
+o se rechaza si una de las promesas es rechazada
+
+allpromise.then(sucess=>console.log('sucess:', sucess)).catch(error=>
+console.log('error:', error));
+//Result // error: 11
+
