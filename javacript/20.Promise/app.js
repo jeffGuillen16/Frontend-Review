@@ -16,7 +16,7 @@ p.then(p=>{
 {
 console.log('error');
 })
-console.log("");
+console.log("------------------------------------------------------------------------------");
 
 let mensaje = new Promise((resolve,reject)=>{
     setTimeout(function(){
