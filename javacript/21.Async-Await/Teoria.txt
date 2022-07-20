@@ -1,0 +1,5 @@
+---------Async await----------------
+Promise y Asyncwait trabajan conjuntamente
+Usamos Async await para definir una función donde se encontrará 
+el await que nos permitirá esperar una promsea de tal forma que podamos
+volver nuestro codigo sincrono.
