@@ -39,7 +39,7 @@ console.log(textCut);
 let b=4;
 returnText(texto,b);
  */
-
+//() ? : forma mas corta para el uso del if
 const recortarTexto=(cadena="",longitud=undefined)=>
   (!cadena)
     ?console.warn("No ingresaste una cadena de texto")
