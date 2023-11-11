@@ -24,8 +24,23 @@
             return "Hola " + nombre + " " + apellido;
         }
 
-/*Funciones Declarativas:
-En las funciones declarativas, utilizamos la palabra reservada function al inicio para poder declarar la función:*/
+/*################## Funciones Declarativas: ###########################
+En las funciones declarativas, utilizamos la palabra reservada function al inicio para poder declarar la función:
+Funcion declarativa  = el Hoisting tira para arriba las funciones y las variables
+saludar(3,"Jefferson");*/
+
+/*
+Hoisting: La declaración de la función saludar3 se eleva al principio del contexto de ejecución.
+En tu código, estás utilizando una función declarada (saludar3) y luego la estás llamando antes de su declaración. En JavaScript, las funciones 
+declaradas tienen hoisting, lo que significa que su definición se "eleva" al principio de su contexto de ejecución. Entonces, este código en 
+particular funcionará debido a ese comportamiento de hoisting.
+*/
+saludar3(3,"Jefferson");
+function saludar3(numero,nombre){
+    var numero;
+    var nombre;
+    console.log(`Hola ${nombre} ${numero}`);
+}
 
 function saludar(f) {
 	console.log(`Hola ${f}`);
@@ -34,7 +49,7 @@ function saludar(f) {
 saludar('Diego');
 
 /*
-Expresión de función:
+ ################# Funcion Expresiva #############################
 En la expresión de función, la declaración se inicia con la palabra reservada var, donde se generará una variable que guardará una función anónima.
 */
 var nombre2 = function(x){
@@ -42,7 +57,6 @@ var nombre2 = function(x){
 }
 
 nombre2("Jeff");
-
 
     </script>
 </body>
