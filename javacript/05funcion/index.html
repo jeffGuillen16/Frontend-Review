@@ -13,17 +13,37 @@
     <h1>Funcion con retorno</h1>
     <script>
         let nombre = "Jeferson"
-        let apellido = "Guillen"
-        // funcion sin retorno
+        let apellido = "";
+//############# funcion sin retorno ####################
         function saludarAMarcelo() {
             console.log("Hola Marcelo");
         }
         saludarAMarcelo();
-        // funcion con retorno
-        function saludar(nombre, apellido) {
-            console.log("Hola " + nombre + " " + apellido);
+//############## funcion con retorno ######################
+        function saludar2(nombre, apellido) {
+            return "Hola " + nombre + " " + apellido;
         }
-        saludar(nombre, apellido);
+
+/*Funciones Declarativas:
+En las funciones declarativas, utilizamos la palabra reservada function al inicio para poder declarar la función:*/
+
+function saludar(f) {
+	console.log(`Hola ${f}`);
+}
+
+saludar('Diego');
+
+/*
+Expresión de función:
+En la expresión de función, la declaración se inicia con la palabra reservada var, donde se generará una variable que guardará una función anónima.
+*/
+var nombre2 = function(x){
+    console.log(`Hola ${x}`)
+}
+
+nombre2("Jeff");
+
+
     </script>
 </body>
 
