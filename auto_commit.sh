@@ -17,4 +17,4 @@ git add .
 git commit -m "$1"
 
 # Realiza el push al repositorio remoto
-git push origin nombre-de-tu-rama
+git push 
