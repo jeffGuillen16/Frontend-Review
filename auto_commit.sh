@@ -7,7 +7,8 @@ if [ -z "$1" ]; then
 fi
 
 # Cambia a la ruta de tu repositorio
-cd C:\Users\marco\OneDrive\Escritorio\code\Frontend-Review
+cd # Cambia a la ruta de tu repositorio
+cd "C:\Users\marco\OneDrive\Escritorio\code\Frontend-Review"
 
 # Añade todos los cambios
 git add .
