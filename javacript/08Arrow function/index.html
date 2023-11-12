@@ -5,135 +5,130 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funcion Flecha</title>
+    <title>Función Flecha</title>
 </head>
 
 <body>
-    <h1>
-        Funcion Flecha
-    </h1>
-    <p> Mejora la expresividad sin necesidad de usar function()</p>
+    <h1>Función Flecha</h1>
+    <p>Mejora la expresividad sin necesidad de usar `function()`.</p>
+
     <script>
-        // const suma=(a,b) => {return a+b;};
-        //let a = 3, b = 4;
+        // Definición de la función flecha para suma
         const suma = (a, b) => a + b;
         console.log(suma(3, 4));
+
         /*
-        This por referencia apunta al objeto window
+        "this" por referencia apunta al objeto window(En el contexto global), en el contexto local apunta al 
+        objeto que lo contiene.
         */
 
-        //Ejemplo con una funcion
+        // Ejemplo con una función normal
         function perro() {
-            console.log(this);
+            console.log(this); // Apunta al objeto window
         }
-        perro();//Apunta al objeto window
+        perro();
 
-
-        //Ejemplo de un objeto literal con una funcion normal
+        // Ejemplo de un objeto literal con una función normal apunta al objeto gato
         const gato = {
             nombre: "kenai",
             maullar: function () {
                 console.log(this);
             }
-        }
-        console.log(gato); //Te aparece lo que contiene el objeto  , por que el arrow function apunte al objeto superio que posee
-        const loro = {        //Podemos aprovecho para poder usar las funciones de window como setTime()
+        };
+        console.log(gato);
+        
+        const loro = {
             nombre: "fede",
-            vuela: () => { console.log(this) }
+            vuela: () => { console.log(loro.nombre); }
         };
         loro.vuela();
 
+        /* Ejemplo Arrow function vs object literal */
 
-        /*ejemplo Arrow function vs object literal*/
-
-        //Con una funcion normal
+        // Con una función normal: apunta al objeto que lo contiene
         const persona = {
             name: 'Agustin',
             decirNombre: function () {
-                console.log(this.name)
+                console.log(this.name);
             }
         };
-        console.log(persona.decirNombre()); // OUTPUT : 'Agustin'        
 
-
-        //con arrow function
-
-            const persona2 = {
-                name: 'Agustin',
-                decirNombre: () => {
-                    console.log(this.name)
-                }
-            };
-            console.log(persona2.decirNombre()); //OUTPUT: 'UNDEFINED'
-        /*Lo que ocurre es que las arrow functions, 
-        a diferencia de las funciones regulares, no se les asigna un this propio sino que heredan
-        el this del contexto superior, que estando dentro del contexto del objeto persona,
-        this hace referencia al objeto window. Por lo tanto, la propiedad 'nombre' no esta 
-        definida en el objeto window, y recibimos el mensaje undefined.*/
-
-            //Funcion de window setTimeout(){} -> setTimerout() apunta al objeto window
-            const persona3 = {
-                nombre: 'Jeff',
-
-                decirNombre: function () {
-                    setTimeout(function () {
-                        console.log(this.nombre);
-                    }, 3000);
-                }
+        /*
+        Al ser una funcion anonima This apunta al objeto persona, por lo tanto,se refiere al objeto al cual pertenece
+         la funcion la que se esta ejecutando.
+        */
+        console.log(persona.decirNombre()); // OUTPUT: 'Agustin'
+        
+        // Con arrow function : Al ser una funcion flecha no tiene un This propio , sino que hereda el this del contexto superior que lo contiene
+        const persona2 = {
+            name: 'Agustin',
+            decirNombre: () => {
+                console.log(this.name); // OUTPUT: 'UNDEFINED'
             }
-            persona3.decirNombre();//OUTPUT : UNDEFINED
+        };
+        console.log(persona2.decirNombre());
+        /* Lo que ocurre es que las arrow functions, 
+        a diferencia de las funciones regulares, no se les asigna un "this" propio 
+        sino que heredan el "this" del contexto superior, que estando dentro del 
+        contexto del objeto persona, "this" hace referencia al objeto window. 
+        Por lo tanto, la propiedad 'nombre' no está definida en el objeto window, 
+        y recibimos el mensaje undefined. */
 
-            //setTimeout Funcion window como arreglar esto con that
-
-            const persona4 = {
-                nombre: 'Jeff',
-
-                decirNombre: function () {
-                    let that = this;
-                    setTimeout(function () {
-                        console.log(that.nombre);
-                    }, 3000);
-                }
+        // Función de window setTimeout(){} -> setTimerout() apunta al objeto window
+        const persona3 = {
+            nombre: 'Jeff',
+            decirNombre: function () {
+                setTimeout(function () {//function(){} apunta al objeto window por lo tanto this.nombre es undefined
+                    console.log(this.nombre);
+                }, 3000);
             }
-            persona4.decirNombre();//OUTPUT UNDEFINED:
+        };
+        persona3.decirNombre(); // OUTPUT: UNDEFINED
 
-            
-            //setTimeout funcion window como arreglar con arrow function
-
-            
-            const persona5 = {
-                nombre: 'Jeff',
-
-                decirNombre: function () {
-                    setTimeout(()=>{
-                        console.log(this.decirNombre);
-                    }, 3000);
-                }
+        // setTimeout Función window cómo arreglar esto con "that"
+        const persona4 = {
+            nombre: 'Jeff',
+            decirNombre: function () {
+                let that = this;
+                setTimeout(function () {
+                    console.log(that.nombre);
+                }, 3000);
             }
-            console.log(persona5);
+        };
+        persona4.decirNombre(); // OUTPUT: 'Jeff'
 
-            var i=1 
-            var n=5;
-            var resultado=1;
-            while (i<=n){
-                resultado=resultado*1;
-                i=i+1;
+        // setTimeout Función window cómo arreglar con arrow function
+        const persona5 = {
+            nombre: 'Jeff',
+            decirNombre: function () {
+                setTimeout(() => {//Dado que es una función flecha, hereda el this de decirNombre, que a su vez es el objeto persona5 ya que apunta al contexto superior que es decirNombre
+                    console.log(this.nombre);//this.nombre se refiere a la propiedad nombre del objeto persona5 que tiene un funcion normal que si puede tener un this propio
+                }, 3000);
             }
-            console.log(resultado);
-            
-                /* ----Prueba 1 Arrow function en diferencia con la funcion tipica -> Respeta el orden sintactico*/
-                const saludar = () => console.log("holaaaaa");
-                saludar();
+        };
+        persona5.decirNombre(); // OUTPUT: 'Jeff'
 
+        // Ejemplo de bucle while
+        var i = 1;
+        var n = 5;
+        var resultado = 1;
+        while (i <= n) {
+            resultado = resultado * i; // Corrección: multiplicar por "i" en lugar de "1"
+            i = i + 1;
+        }
+        console.log(resultado);
 
-                /* ---Prueba 2---- 
-                function saludar(){
-                    console.log("holaaaa");
-                };
-                saludar(); */
-            
+        /* #############Prueba 1 Arrow function en diferencia con la función típica -> Respeta el orden sintáctico */
+        const saludar = () => console.log("holaaaaa");
+        saludar();
 
-</script>
-    </body>
-    
-    </html>
+        /* ######### Prueba 2 ############## 
+        function saludar() {
+            console.log("holaaaa");
+        };
+        saludar();
+        */
+    </script>
+</body>
+
+</html>
