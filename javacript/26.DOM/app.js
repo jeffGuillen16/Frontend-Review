@@ -2,15 +2,30 @@
     NODO EN EL DOM : Es cualquier etiqueta del cuerpo, como un parrafo,
     el mismo body o incluso las etiquetas de una lista . Con javascript podemos
     modificar estas etiquetas con el uso de eventos.
-*/
-/* ############################Selectore########################## */
+
+//Metodos del DOM
+
+/*################ getElementoBy ##########
+getElementsBy (por ejemplo, getElementsByClassName, getElementsByTagName):
+getElementById, getElementsByClassName, getElementsByTagName, etc.`:
+Estos métodos son más específicos y se centran en seleccionar elementos por su ID, clase o tipo de etiqueta.
+Devuelven una colección de elementos que coinciden con el criterio de selección.
+Se accede a los elementos de la colección utilizando índices o en el caso de getElementById, 
+devuelve un solo elemento (ya que los IDs deben ser únicos en un documento).*/
 console.log(document.getElementsByTagName('li'));
 console.log(document.getElementsByClassName('card'));
 console.log(document.getElementsByName("usuario"))
 console.log(document.getElementById("usu"));
 
-/* querySelector -> reemplaza a todos los selector getElements)
--> retorna el primer elemento  del selector*/
+/*################# querySelector ##########
+querySelector:
+
+Se utiliza para seleccionar el primer elemento que coincida con un selector CSS.
+Devuelve solo un elemento (el primero que encuentra).
+Si no encuentra ningún elemento, devuelve null.
+Puede utilizar selectores más complejos, como clases, identificadores, elementos descendientes, etc.
+
+*/
 console.log(document.querySelector("#usu"));
 console.log(document.querySelector("li"));
 /* querySelectorAll("")*/
@@ -38,3 +53,4 @@ console.log($linkDOM.dataset);
 console.log($linkDOM.dataset.description);
 $linkDOM.setAttribute("data-description","Modelo de Objeto del Documento");
 console.log($linkDOM.dataset.description);
+

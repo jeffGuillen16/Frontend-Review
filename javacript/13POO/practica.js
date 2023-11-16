@@ -62,15 +62,16 @@ ballena.sonar();
 /*----------------- Herencia Protipica-----------*/
 
 function Perro(nombre, edad , genero){
-    this.super=Animal;
-    this.super(nombre,edad);
+    this.super=Animal;// Aquí estás asignando la clase Animal a la propiedad super
+    this.super(nombre,edad);// Llamas al constructor de la clase Animal
     this.genero=genero;
 }
 
 //Perro esta heredando de animal
 
-Perro.prototype=Animal;
-Perro.prototype.constructor=Perro;
+Perro.prototype=Animal;// Aquí estás asignando la clase Animal al prototipo de Perro
+//Perro.prototype = Object.create(Animal.prototype);
+Perro.prototype.constructor=Perro; // Estableces el constructor correcto para Perro
 
 Perro.prototype.habilidad=function(){
     console.log("Perro salta XD");
@@ -78,6 +79,7 @@ Perro.prototype.habilidad=function(){
 
 const loli=new Perro("loli",3 , "hembra");
 console.log(loli);
+console.log(loli.sonar);
 
 
 //-------------------------
